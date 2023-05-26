@@ -14,12 +14,15 @@ val_path = '/content/images/validation'
 test_path = '/content/images/test'
 
 # Get list of all images
-jpg_file_list = [path for path in Path(image_path).rglob('*.jpg')]
-JPG_file_list = [path for path in Path(image_path).rglob('*.JPG')]
-png_file_list = [path for path in Path(image_path).rglob('*.png')]
-bmp_file_list = [path for path in Path(image_path).rglob('*.bmp')]
+file_list = []
+for folder_name in ['baik', 'bangku', 'bel', 'dia', 'meja', 'pramuka', 'sakit', 'saya', 'teman', 'tugas']:
+    folder_path = os.path.join(image_path, folder_name)
+    jpg_files = list(Path(folder_path).rglob('*.jpg'))
+    JPG_files = list(Path(folder_path).rglob('*.JPG'))
+    png_files = list(Path(folder_path).rglob('*.png'))
+    bmp_files = list(Path(folder_path).rglob('*.bmp'))
+    file_list.extend(jpg_files + JPG_files + png_files + bmp_files)
 
-file_list = jpg_file_list + JPG_file_list + png_file_list + bmp_file_list
 file_num = len(file_list)
 print('Total images: %d' % file_num)
 
