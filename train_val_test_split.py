@@ -1,5 +1,7 @@
 
 # Script for Split Dataset to train 80%, validation 10%, test 10%
+# Based off code from GitHub user EdjeElectronics: https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/util_scripts/train_val_test_split.py
+
 import glob
 from pathlib import Path
 import random
