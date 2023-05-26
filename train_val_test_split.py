@@ -8,10 +8,10 @@ import random
 import os
 
 # Define paths to image folders
-image_path = '/content/word_sibi/all'
-train_path = '/content/word_sibi/train'
-val_path = '/content/word_sibi/validation'
-test_path = '/content/word_sibi/test'
+image_path = '/content/images/all'
+train_path = '/content/images/train'
+val_path = '/content/images/validation'
+test_path = '/content/images/test'
 
 # Get list of all images
 jpg_file_list = [path for path in Path(image_path).rglob('*.jpg')]
