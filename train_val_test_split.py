@@ -8,7 +8,7 @@ import random
 import os
 
 # Define paths to image folders
-image_folder = '/content/images/all'
+image_folder = '/content/images/all/word_sibi'
 train_folder = '/content/images/train'
 val_folder = '/content/images/validation'
 test_folder = '/content/images/test'
