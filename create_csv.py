@@ -27,10 +27,12 @@ def xml_to_csv(path):
     return xml_df
 
 def main():
-    for folder in ['train','validation']:
-        image_path = os.path.join(os.getcwd(), ('images/' + folder))
-        xml_df = xml_to_csv(image_path)
-        xml_df.to_csv(('images/' + folder + '_labels.csv'), index=None)
-        print('Successfully converted xml to csv.')
+    folders = ['baik', 'bangku', 'bel', 'dia', 'meja', 'pramuka', 'sakit', 'saya', 'teman', 'tugas']
+    for folder in folders:
+        for sub_folder in ['train', 'validation']:
+            image_path = os.path.join(os.getcwd(), ('images/' + sub_folder + '/' + folder))
+            xml_df = xml_to_csv(image_path)
+            xml_df.to_csv(('images/' + sub_folder + '/' + folder + '_labels.csv'), index=None)
+            print(f'Successfully converted xml to csv for folder {folder} in {sub_folder}.')
 
 main()
