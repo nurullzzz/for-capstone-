@@ -89,16 +89,14 @@ def create_tf_example(group, path):
 def main(_):
     # Load and prepare data
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
+    path = os.path.join(os.getcwd(), FLAGS.image_dir)
     examples = pd.read_csv(FLAGS.csv_input)
 
     # Create TFRecord files
-    folders = ['baik', 'bangku', 'bel', 'dia', 'meja', 'pramuka', 'sakit', 'saya', 'teman', 'tugas']
-    for folder in folders:
-        image_dir = os.path.join(FLAGS.image_dir, folder)
-        grouped = split(examples[examples['filename'].str.contains(folder)], 'filename')
-        for group in grouped:
-            tf_example = create_tf_example(group, image_dir)
-            writer.write(tf_example.SerializeToString())
+    grouped = split(examples, 'filename')
+    for group in grouped:
+        tf_example = create_tf_example(group, path)
+        writer.write(tf_example.SerializeToString())
 
     writer.close()
     output_path = os.path.join(os.getcwd(), FLAGS.output_path)
