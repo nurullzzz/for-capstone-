@@ -8,10 +8,10 @@ import random
 import os
 
 # Define paths to image folders
-image_path = '/content/drive/MyDrive/WeSign/Images/all'
-train_path = '/content/drive/MyDrive/WeSign/Images/training'
-val_path = '/content/drive/MyDrive/WeSign/Images/validation'
-test_path = '/content/drive/MyDrive/WeSign/Images/test'
+image_path = '/content/drive/MyDrive/WeSign_SIBI/Images/all'
+train_path = '/content/drive/MyDrive/WeSign_SIBI/Images/training'
+val_path = '/content/drive/MyDrive/WeSign_SIBI/Images/validation'
+test_path = '/content/drive/MyDrive/WeSign_SIBI/Images/test'
 
 # Get list of all images
 jpg_file_list = [path for path in Path(image_path).rglob('*.jpg')]
